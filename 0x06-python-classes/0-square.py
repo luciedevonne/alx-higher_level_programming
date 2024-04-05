@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+'''creating class'''
 class Square:
 
     """creating initialization for square"""
