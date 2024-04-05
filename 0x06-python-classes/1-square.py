@@ -2,8 +2,8 @@
 
 '''defining square'''
 
-class Square:
 
+class Square:
 
     """creating instances of class"""
 
