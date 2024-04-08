@@ -4,6 +4,7 @@
 class Square:
     '''Represents a square'''
 
+
     def __init__(self, size=0):
         '''Initializes a Square instance with a given size.
 
@@ -35,4 +36,3 @@ class Square:
             int: The area of the square.
         '''
         return self.__size ** 2
-
