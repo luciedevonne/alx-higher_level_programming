@@ -15,6 +15,8 @@ class Square:
         '''calculate area of square'''
         return self.__size **2
 
+'''create square object with size'''
 square = Square(5)
 
+'''calculate area of the object'''
 print("Area:", square.area())
