@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-'''create class Square'''
+'''creating class'''
 
 
 class Square:
@@ -27,8 +27,8 @@ class Square:
         '''Calculates and returns the area of the square.'''
         return self.__size ** 2
 
-# Create a Square object with size 5
-square = Square(5)
+# Create a Square object with size 3
+mysquare = Square(3)
 
-# Calculate and print the area
-print("Area:", square.area())  # Output: 25
+# Print the area of mysquare
+print("{}".format(mysquare.area()))  # Output: 9
