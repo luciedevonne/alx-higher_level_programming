@@ -27,6 +27,7 @@ class Square:
         '''Calculates and returns the area of the square.'''
         return self.__size ** 2
 
+
 # Create a Square object with size 3
 mysquare = Square(3)
 
