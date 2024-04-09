@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+'''module defining square'''
+
+
 class Square:
     '''Instantiation whereby:
     size must be an integer, otherwise raise a TypeError exception with the message
