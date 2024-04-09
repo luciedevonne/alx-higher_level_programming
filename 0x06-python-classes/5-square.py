@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''module defining class Square'''
+'''Module defining class Square'''
 
 
 class Square:
@@ -9,8 +9,10 @@ class Square:
     '''
 
     def __init__(self, size=0):
-        '''defining class Square,
-        meant to have this in class Square
+        '''Defining class Square.
+        
+        Args:
+            size (int): The size of the square. Defaults to 0.
         '''
 
         if not isinstance(size, int):
@@ -21,38 +23,39 @@ class Square:
         self.__size = size
 
     @property
-    '''retrieveing size
-    '''
-
     def size(self):
+        '''Retrieve the size of the square.'''
         return self.__size
 
     @size.setter
-    '''setting size
-    '''
-
     def size(self, value):
-        if not isinstance(value, integer):
+        '''Set the size of the square.
+        
+        Args:
+            value (int): The size value to be set.
+        
+        Raises:
+            TypeError: If value is not an integer.
+            ValueError: If value is less than 0.
+        '''
+        if not isinstance(value, int):
             raise TypeError('size must be an integer')
-        elif size<0:
+        elif value < 0:
             raise ValueError('size must be >= 0')
 
         self.__size = value
 
     def area(self):
-        '''defining srea
-        '''
-
-        return (self.__size ** 2)
+        '''Calculate the area of the square.'''
+        return self.__size ** 2
 
     def my_print(self):
-        '''printing out the sqaure using the character
+        '''Print the square using the character '#'.
+        
+        If the size is 0, print an empty line.
         '''
-
         if self.__size == 0:
             print()
-
         else:
             for _ in range(self.__size):
                 print('#' * self.__size)
-
