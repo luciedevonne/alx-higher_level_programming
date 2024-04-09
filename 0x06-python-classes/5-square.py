@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-'''defining class Square'''
+'''module defining class Square'''
+
 
 class Square:
     '''Instantiation whereby:
