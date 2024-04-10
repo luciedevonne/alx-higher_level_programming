@@ -9,6 +9,8 @@ class Square:
     size must be an integer
     if size is less than 0,
     raise a ValueError exception with the message size must be >= 0
+    position must be a tuple of 2 positive integer:
+    otherwise raise a TypeError
     '''
 
     def __init__(self, size=0, position(0,0)):
@@ -16,6 +18,7 @@ class Square:
 
         Args:
             size (int): The size of the square. Defaults to 0.
+            position of sqaure defaulted to 0,0
         '''
         if not isinstance(size, int):
             raise TypeError('size must be an integer')
@@ -50,11 +53,16 @@ class Square:
 
     @property
     def position(self):
+        '''retrieve position of square'''
         return self.__position
 
     @size.setter
+    '''set position 
+    position must be a tuple of 2 positive integers
+    '''
     def position(self, value):
-
+        '''position must be a tuple of 2 positive integers
+        '''
         if not isinstance(value, len(value) != 2):
             raise TypeError('position must be a tuple of 2 positive integers')
 
@@ -69,6 +77,7 @@ class Square:
         '''Print the square using the character '#'.
 
         If the size is 0, print an empty line.
+        position should be use by using space
         '''
         if self.__size == 0:
             print()
