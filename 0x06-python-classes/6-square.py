@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+'''module defining square'''
+
+
 class Square:
     def __init__(self, size=0, position=(0, 0)):
         '''Initialize a square object.
