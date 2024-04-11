@@ -5,6 +5,20 @@
 class Rectangle:
     """Empty class Rectangle that defines a rectangle."""
     def __init__(self, width=0, height=0):
+       '''set the value of the rectangle
+        
+        Args:
+        value(int): the size value to be set
+
+        Raises:
+        TypeError if width is not an integer
+        ValueError if width is less than 0
+        '''
+        if width < 0:
+            raise ValueError('width must be >= 0')
+        if height < 0:
+            raise ValueError('height must be >= 0')
+
         self.__width = width
         self.__height = height
         
