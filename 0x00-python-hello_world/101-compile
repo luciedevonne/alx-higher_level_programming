@@ -1,25 +1,18 @@
 #!/bin/bash
 
-# Check if PYFILE environment variable is set
-if [ -z "$PYFILE" ]; then
-    echo "Error: PYFILE environment variable is not set."
-    exit 1
-fi
+import os
+import py_compile
 
-# Extract the filename without extension
-filename=$(basename -- "$PYFILE")
-filename_noext="${filename%.*}"
+# Get the filename from the environment variable
+pyfile = os.getenv('PYFILE')
 
-# Compile the Python script
-echo "Compiling $PYFILE ..."
-python3 -m py_compile "$PYFILE"
+if pyfile:
+    # Compile the Python file
+    py_compile.compile(pyfile)
 
-# Check if compilation was successful
-if [ $? -eq 0 ]; then
-    # Rename the compiled file to match the desired format
-    mv "${filename_noext}.pyc" "${filename_noext}c.pyc"
-    echo "Compilation successful. Output filename: ${filename_noext}c.pyc"
-else
-    echo "Compilation failed."
-    exit 1
-fi
+    # Rename the compiled file to include 'c' suffix
+    compiled_filename = pyfile + 'c'
+    os.rename('__pycache__' + os.sep + os.path.basename(pyfile)[:-3] + '.cpython-39.pyc', compiled_filename)
+    print(f"Successfully compiled '{pyfile}' to '{compiled_filename}'")
+else:
+    print("Error: Environment variable $PYFILE is not set.")
